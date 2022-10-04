@@ -20,6 +20,7 @@
           dense
           round
           label="Logout"
+          @click="$router.replace('/')"
         />
 
       </q-toolbar>

@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="flex flex-center" style="background-color: #ececec;">
     <div class="q-pa-md">
       <div class="q-gutter-y-md" style="width: 600px">
         <q-card>
@@ -29,15 +29,20 @@
                 class="q-gutter-md"
               >
                 <q-input
+                  input-class="text-center"
+                  bg-color="secondary"
                   filled
-                  type="email"
                   v-model="email"
                   label="Your email *"
+                  :rules="[
+                  val => !!val || '* Required ', isValidEmail
+                  ]"
                   lazy-rules
-                  :rules="[ val => val && val.length > 0 || 'Please type something']"
                 />
 
                 <q-input
+                  input-class="text-center"
+                  bg-color="secondary"
                   filled
                   type="password"
                   v-model="password"
@@ -51,7 +56,11 @@
                 />
 
                 <div class="flex flex-center">
-                  <q-btn label="Log In" type="submit" color="primary"/>
+                  <q-btn
+                  label="Log In"
+                  type="submit"
+                  color="primary"
+                  />
                 </div>
               </q-form>
 
@@ -68,15 +77,20 @@
                 class="q-gutter-md"
               >
                 <q-input
-                  filled
-                  type="email"
-                  v-model="email2"
-                  label="Your email *"
-                  lazy-rules
-                  :rules="[ val => val && val.length > 0 || 'Please type something']"
+                input-class="text-center"
+                bg-color="secondary"
+                filled
+                v-model="email"
+                label="Your email *"
+                :rules="[
+                  val => !!val || '* Required ', isValidEmail
+                  ]"
+                lazy-rules
                 />
 
                 <q-input
+                  input-class="text-center"
+                  bg-color="secondary"
                   filled
                   type="password"
                   v-model="password2"
@@ -89,8 +103,15 @@
                   lazy-rules
                 />
 
+                <q-toggle v-model="accept" label="I accept the license and terms" />
+
                 <div class="flex flex-center">
-                  <q-btn label="Log In" type="submit" color="primary"/>
+                  <q-btn
+                  @click="$router.replace('/home')"
+                  label="Register"
+                  type="submit"
+                  color="primary"
+                  />
                 </div>
               </q-form>
 
@@ -105,7 +126,7 @@
     <q-footer>
       <q-toolbar class="flex flex-center">
 
-          <q-btn-dropdown color="secondary" label="Languages">
+          <q-btn-dropdown color="secondary" text-color="primary" label="Languages">
             <q-list>
 
               <q-item clickable v-close-popup @click="onItemClick">
@@ -131,18 +152,10 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-import { useQuasar } from 'quasar'
-
-export function validateEmail (email) {
-  const reg = /^([A-Za-z0-9_\-.+])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,})$/
-  if (!reg.test(email)) return false
-  return true
-}
 
 export default defineComponent({
   name: 'LoginPage',
   setup () {
-    const $q = useQuasar()
     const email = ref(null)
     const password = ref(null)
     const accept = ref(false)
@@ -154,15 +167,14 @@ export default defineComponent({
       accept,
       email2,
       password2,
-      onSubmit () {
-        $q.notify({
-          color: 'green-4',
-          textColor: 'white',
-          icon: 'cloud_done',
-          message: 'Submitted'
-        })
-      },
-      tab: ref('login')
+      tab: ref('login'),
+      model: ''
+    }
+  },
+  methods: {
+    isValidEmail (val) {
+      const emailPattern = /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/
+      return emailPattern.test(val) || 'Invalid format'
     }
   }
 })
