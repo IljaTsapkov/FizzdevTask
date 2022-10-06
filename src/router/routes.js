@@ -4,7 +4,7 @@ const routes = [
     path: '/home',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/MainPage.vue') }
+      { path: '/home', component: () => import('pages/MainPage.vue'), meta: { requiresAuth: true } }
     ]
   },
 
@@ -12,7 +12,7 @@ const routes = [
     path: '/',
     component: () => import('layouts/LoginLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/LoginPage.vue') }
+      { path: '/', component: () => import('pages/AuthPage.vue') }
     ]
   },
 

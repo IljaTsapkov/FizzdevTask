@@ -29,6 +29,7 @@
                       class="col"
                       src="https://cdn.quasar.dev/img/parallax2.jpg"
                     />
+                    <q-separator />
 
                     <q-card-actions vertical class="justify-around">
                       <q-btn flat round color="red" icon="favorite" />
