@@ -7,7 +7,11 @@
         outlined
         class="q-mb-md"
         type="email"
-        placeholder="Your email *" />
+        placeholder="Your email *"
+        :rules="[
+          val => !!val || '* Required ', isValidEmail
+        ]"
+        lazy-rules />
       <q-input
         v-model="formData.password"
         input-class="text-center"
@@ -15,7 +19,13 @@
         outlined
         class="q-mb-md"
         type="password"
-        placeholder="Your password *" />
+        placeholder="Your password *"
+        :rules="[
+          val => !!val || '* Required',
+          val => val.length > 5 || 'Password too short',
+          val => val.length < 7 || 'Very long password'
+        ]"
+        lazy-rules />
       <div class="flex flex-center" style="margin-top: 2em;">
         <q-btn
           type="submit"
