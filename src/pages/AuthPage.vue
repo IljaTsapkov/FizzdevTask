@@ -7,8 +7,8 @@
             v-model="tab"
             dense
             class="text-grey"
-            active-color="primary"
-            indicator-color="primary"
+            active-color="accent"
+            indicator-color="accent"
             align="justify"
             narrow-indicator
           >
@@ -34,29 +34,6 @@
         </q-card>
       </div>
     </div>
-    <q-footer>
-      <q-toolbar class="flex flex-center">
-
-          <q-btn-dropdown color="secondary" text-color="primary" label="Languages">
-            <q-list>
-
-              <q-item clickable v-close-popup @click="onItemClick">
-                <q-item-section>
-                  <q-item-label>English</q-item-label>
-                </q-item-section>
-              </q-item>
-
-              <q-item clickable v-close-popup @click="onItemClick">
-                <q-item-section>
-                  <q-item-label>Russian</q-item-label>
-                </q-item-section>
-              </q-item>
-
-            </q-list>
-          </q-btn-dropdown>
-
-      </q-toolbar>
-    </q-footer>
 
   </q-page>
 </template>

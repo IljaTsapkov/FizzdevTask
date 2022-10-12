@@ -12,15 +12,14 @@
             align="justify"
             narrow-indicator
           >
-            <q-tab name="movies" label="Movies" />
-            <q-tab name="songs" label="Songs" />
+            <q-tab name="movies" label="Favourite Movies" />
+            <q-tab name="songs" label="Favourite Songs" />
           </q-tabs>
 
           <q-separator />
 
           <q-tab-panels v-model="tab" animated>
             <q-tab-panel name="movies">
-              <div class="text-h6 text-center">Movies</div>
 
               <div class="container">
 
@@ -172,7 +171,6 @@
             </q-tab-panel>
 
             <q-tab-panel name="songs">
-              <div class="text-h6 text-center">Songs</div>
 
               <div class="container">
 
@@ -340,7 +338,7 @@
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  name: 'MainPage',
+  name: 'FavouritesPage',
 
   setup () {
     return {

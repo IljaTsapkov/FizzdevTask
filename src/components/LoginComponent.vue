@@ -19,7 +19,7 @@
       <div class="flex flex-center" style="margin-top: 2em;">
         <q-btn
           type="submit"
-          color="primary"
+          color="accent"
           :label="tab"
         />
       </div>
@@ -49,15 +49,6 @@ export default {
       } else {
         this.createUser(this.formData.email, this.formData.password)
       }
-    },
-    google () {
-      const provider = new firebase.auth.GoogleAuthProvider()
-      firebase.auth().signInWithPopup(provider)
-        .then(result => {
-          console.log('result', result)
-          this.$router.push('/home')
-        })
-        .catch(error => console.log('error', error))
     },
     signInExistingUser (email, password) {
       console.log(email, password)
