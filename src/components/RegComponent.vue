@@ -65,14 +65,6 @@ export default {
         this.createUser(this.formData.email, this.formData.password)
       }
     },
-    signInExistingUser (email, password) {
-      console.log(email, password)
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-          this.$router.push('/home')
-        })
-        .catch(error => { console.log(error) })
-    },
     createUser (email, password) {
       console.log(email, password)
       firebase.auth().createUserWithEmailAndPassword(email, password)

@@ -5,7 +5,9 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '/home', component: () => import('pages/MainPage.vue'), meta: { requiresAuth: true } },
-      { path: '/favourites', component: () => import('pages/FavouritesPage.vue'), meta: { requiresAuth: true } }
+      { path: '/favourites', component: () => import('pages/FavouritesPage.vue'), meta: { requiresAuth: true } },
+      { path: '/history', component: () => import('pages/HistoryPage.vue'), meta: { requiresAuth: true } },
+      { path: '/test', component: () => import('pages/TestPage.vue'), meta: { requiresAuth: true } }
     ]
   },
 

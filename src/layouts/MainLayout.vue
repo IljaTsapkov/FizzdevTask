@@ -53,7 +53,10 @@
           </q-item-section>
         </q-item>
 
-        <q-item clickable v-ripple>
+        <q-item
+        to="/history"
+        clickable
+        v-ripple>
           <q-item-section avatar>
             <q-icon name="history" />
           </q-item-section>

@@ -33,7 +33,7 @@
                     </div>
 
                     <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -49,7 +49,7 @@
                     </div>
 
                     <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -65,7 +65,7 @@
                     </div>
 
                     <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -81,7 +81,7 @@
                     </div>
 
                     <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -97,7 +97,7 @@
                     </div>
 
                     <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -113,7 +113,7 @@
                     </div>
 
                     <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -129,7 +129,7 @@
                     </div>
 
                     <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -145,7 +145,7 @@
                     </div>
 
                     <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -161,7 +161,7 @@
                     </div>
 
                     <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -184,7 +184,7 @@
                     </div>
 
                     <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -200,7 +200,7 @@
                     </div>
 
                     <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -216,7 +216,7 @@
                     </div>
 
                     <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -232,7 +232,7 @@
                     </div>
 
                     <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -248,7 +248,7 @@
                     </div>
 
                     <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -264,7 +264,7 @@
                     </div>
 
                     <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -280,7 +280,7 @@
                     </div>
 
                     <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -296,7 +296,7 @@
                     </div>
 
                     <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>
@@ -312,7 +312,7 @@
                     </div>
 
                     <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="accent" icon="favorite" />
+                      <q-btn flat round color="red" icon="favorite" />
                       <q-btn flat round color="accent" icon="play_circle" />
                     </q-card-actions>
                   </q-card-section>

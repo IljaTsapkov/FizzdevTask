@@ -57,16 +57,6 @@ export default {
           this.$router.push('/home')
         })
         .catch(error => { console.log(error) })
-    },
-    createUser (email, password) {
-      console.log(email, password)
-      firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(auth => {
-          this.$router.push('/home')
-        })
-        .catch(error => {
-          console.log(error)
-        })
     }
   }
 }
