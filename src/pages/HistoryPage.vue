@@ -8,8 +8,9 @@
             title="History"
             :rows="rows"
             :columns="columns"
-            :hide-pagination="true"
             row-key="name"
+            :expanded="expanded"
+            v-model:pagination="pagination"
           >
 
             <template v-slot:header="props">
@@ -28,7 +29,7 @@
             <template v-slot:body="props">
               <q-tr :props="props">
                 <q-td auto-width>
-                  <q-btn dense round flat :icon="props.expand ? 'arrow_drop_up' : 'arrow_drop_down'" @click="props.expand = !props.expand" ></q-btn>
+                  <q-btn dense round flat :icon="props.expand ? 'arrow_drop_up' : 'arrow_drop_down'" @click="toggleExpanded(props.row.name)" ></q-btn>
                 </q-td>
                 <q-td
                   v-for="col in props.cols"
@@ -44,7 +45,7 @@
                     <q-card-section horizontal>
                       <q-img
                         style="max-height: 220px"
-                        src="movie.image"
+                        src="http://dummyimage.com/100x100.png/5fa2dd/ffffff"
                       />
 
                       <q-card-actions vertical class="justify-around">
@@ -84,98 +85,182 @@
 import { defineComponent } from 'vue'
 import { useQuasar } from 'quasar'
 
-const columns = [
-  {
-    name: 'name',
-    required: true,
-    label: 'Name',
-    align: 'left',
-    field: row => row.name,
-    format: val => `${val}`,
-    sortable: true
-  },
-  { name: 'type', align: 'center', label: 'Type', field: 'type', sortable: true },
-  { name: 'action', label: 'Action', field: 'action', sortable: true },
-  { name: 'date', label: 'Date', field: 'date' }
-]
-
-const rows = [
-  {
-    name: 'Ragtime',
-    type: 'Movie',
-    action: 'Play',
-    date: '12:34:45 01.02'
-  },
-  {
-    name: 'Baboon, olive',
-    type: 'Song',
-    action: 'Play',
-    date: '11:44:05 11.02'
-  },
-  {
-    name: 'Kongoni',
-    type: 'Song',
-    action: 'Play',
-    date: '01:04:55 25.12'
-  },
-  {
-    name: 'King cormorant',
-    type: 'Song',
-    action: 'Stop',
-    date: '01:44:55 25.12'
-  },
-  {
-    name: 'Missing in Action',
-    type: 'Movie',
-    action: 'Stop',
-    date: '21:03:55 25.04'
-  },
-  {
-    name: 'Fitna',
-    type: 'Song',
-    action: 'Play',
-    date: '22:33:25 01.08'
-  },
-  {
-    name: 'Pheasant, ring-necked',
-    type: 'Song',
-    action: 'Stop',
-    date: '00:27:13 15.10'
-  },
-  {
-    name: 'Double Or Nothing',
-    type: 'Movie',
-    action: 'Stop',
-    date: '110:27:53 24.10'
-  },
-  {
-    name: 'Accident',
-    type: 'Movie',
-    action: 'Stop',
-    date: '23:27:13 16.10'
-  },
-  {
-    name: 'Dove, galapagos',
-    type: 'Song',
-    action: 'Stop',
-    date: '11:17:33 08.01'
-  }
-]
-
 export default defineComponent({
   name: 'HistoryPage',
 
-  setup () {
+  data () {
     const $q = useQuasar()
-    return {
-      rows,
-      columns,
-      clicked: false,
 
+    return {
+      pagination: {
+        rowsPerPage: 10
+      },
+      clicked: false,
+      expanded: [],
+      columns: [
+        {
+          name: 'name',
+          required: true,
+          label: 'Name',
+          align: 'left',
+          field: row => row.name,
+          format: val => `${val}`,
+          sortable: true
+        },
+        { name: 'type', align: 'center', label: 'Type', field: 'type', sortable: true },
+        { name: 'action', label: 'Action', field: 'action', sortable: true },
+        { name: 'date', label: 'Date', field: 'date' }
+      ],
+      rows: [
+        {
+          name: 'Ragtime',
+          type: 'Movie',
+          action: 'Play',
+          date: '12:34:45 01.02'
+        },
+        {
+          name: 'Baboon, olive',
+          type: 'Song',
+          action: 'Play',
+          date: '11:44:05 11.02'
+        },
+        {
+          name: 'Kongoni',
+          type: 'Song',
+          action: 'Play',
+          date: '01:04:55 25.12'
+        },
+        {
+          name: 'King cormorant',
+          type: 'Song',
+          action: 'Stop',
+          date: '01:44:55 25.12'
+        },
+        {
+          name: 'Missing in Action',
+          type: 'Movie',
+          action: 'Stop',
+          date: '21:03:55 25.04'
+        },
+        {
+          name: 'Fitna',
+          type: 'Song',
+          action: 'Play',
+          date: '22:33:25 01.08'
+        },
+        {
+          name: 'Pheasant, ring-necked',
+          type: 'Song',
+          action: 'Stop',
+          date: '00:27:13 15.10'
+        },
+        {
+          name: 'Double Or Nothing',
+          type: 'Movie',
+          action: 'Stop',
+          date: '110:27:53 24.10'
+        },
+        {
+          name: 'Accident',
+          type: 'Movie',
+          action: 'Stop',
+          date: '23:27:13 16.10'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        },
+        {
+          name: 'Dove, galapagos',
+          type: 'Song',
+          action: 'Stop',
+          date: '11:17:33 08.01'
+        }
+      ],
       showNotif () {
         $q.notify({
           timeout: 20000,
-          message: 'Playing: ',
+          message: 'Playing: ' + `${this.name}`,
           color: 'secondary',
           textColor: 'accent',
           badgeStyle: 'opacity: 0',
@@ -184,6 +269,12 @@ export default defineComponent({
           ]
         })
       }
+    }
+  },
+
+  methods: {
+    toggleExpanded (val) {
+      this.expanded = this.expanded[0] === val ? [] : [val]
     }
   }
 })
@@ -224,4 +315,6 @@ export default defineComponent({
   overflow: hidden
   text-overflow: ellipsis
   white-space: nowrap
+.clicked
+  color: red
 </style>

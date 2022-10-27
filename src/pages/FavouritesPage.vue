@@ -27,6 +27,7 @@
                   <q-card-section horizontal>
                     <q-img
                       style="max-height: 220px"
+                      src="http://dummyimage.com/100x100.png/5fa2dd/ffffff"
                     />
 
                     <q-card-actions vertical class="justify-around">
@@ -55,6 +56,7 @@
                   <q-card-section horizontal>
                     <q-img
                       style="max-height: 220px"
+                      src="http://dummyimage.com/100x100.png/dddddd/000000"
                     />
 
                     <q-card-actions vertical class="justify-around">
@@ -83,6 +85,7 @@
                   <q-card-section horizontal>
                     <q-img
                       style="max-height: 220px"
+                      src="http://dummyimage.com/100x100.png/5fa2dd/000000"
                     />
 
                     <q-card-actions vertical class="justify-around">
@@ -132,6 +135,7 @@
                   <q-card-section>
                     <q-img
                       style="max-height: 220px"
+                      src="http://dummyimage.com/100x100.png/ff4444/ffffff"
                     />
 
                     <q-card-actions class="justify-around" style="max-height: auto;">
@@ -161,6 +165,7 @@
                   <q-card-section>
                     <q-img
                       style="max-height: 220px"
+                      src="http://dummyimage.com/100x100.png/5fa2dd/ffffff"
 
                     />
 
@@ -191,6 +196,7 @@
                   <q-card-section>
                     <q-img
                       style="max-height: 220px"
+                      src="http://dummyimage.com/100x100.png/dddddd/000000"
                     />
 
                     <q-card-actions class="justify-around" style="max-height: auto;">

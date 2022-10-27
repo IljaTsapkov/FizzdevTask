@@ -145,7 +145,7 @@ export default defineComponent({
       showNotif () {
         $q.notify({
           timeout: 20000,
-          message: 'Playing: ' + this.$refs.test,
+          message: 'Playing: ' + `${this.name}`,
           color: 'secondary',
           textColor: 'accent',
           badgeStyle: 'opacity: 0',
