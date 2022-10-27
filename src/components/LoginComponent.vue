@@ -56,7 +56,10 @@ export default {
         .then((userCredential) => {
           this.$router.push('/home')
         })
-        .catch(error => { console.log(error) })
+        .catch(error => {
+          console.log(error)
+          this.$q.notify({ message: 'Wrong credentials.' })
+        })
     }
   }
 }

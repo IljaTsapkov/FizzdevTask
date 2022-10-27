@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center" style="background-color: #ececec;">
     <div class="q-pa-md">
-      <div class="q-gutter-y-md" style="max-width: 1000px">
+      <div class="q-gutter-y-md" style="max-width: 1500px">
         <q-card>
           <q-tabs
             v-model="tab"
@@ -23,149 +23,99 @@
 
               <div class="container">
 
-                <q-card class="movies" flat bordered>
+                <q-card class="movies" bordered>
                   <q-card-section horizontal>
                     <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
+                      style="max-height: 220px"
                     />
-                    <div class="absolute-bottom text-subtitle2 text-left">
-                      Title
-                    </div>
 
-                    <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
+                    <q-card-actions vertical class="justify-around">
+                      <q-btn
+                      flat
+                      round
+                      color="red"
+                      icon="favorite"
+                      />
+                      <q-btn
+                      @click="btnNotify()"
+                      flat
+                      round
+                      color="accent"
+                      icon="play_circle"
+                      />
                     </q-card-actions>
                   </q-card-section>
+
+                  <q-separator />
+
+                  <div class="text-h6 q-mt-sm q-mb-xs text-center truncate">Test</div>
                 </q-card>
 
-                <q-card class="movies" flat bordered>
+                <q-card class="movies" bordered>
                   <q-card-section horizontal>
                     <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
+                      style="max-height: 220px"
                     />
-                    <div class="absolute-bottom text-subtitle2 text-left">
-                      Title
-                    </div>
 
-                    <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
+                    <q-card-actions vertical class="justify-around">
+                      <q-btn
+                      flat
+                      round
+                      color="red"
+                      icon="favorite"
+                      />
+                      <q-btn
+                      @click="btnNotify()"
+                      flat
+                      round
+                      color="accent"
+                      icon="play_circle"
+                      />
                     </q-card-actions>
                   </q-card-section>
+
+                  <q-separator />
+
+                  <div class="text-h6 q-mt-sm q-mb-xs text-center truncate">Test</div>
                 </q-card>
 
-                <q-card class="movies" flat bordered>
+                <q-card class="movies" bordered>
                   <q-card-section horizontal>
                     <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
+                      style="max-height: 220px"
                     />
-                    <div class="absolute-bottom text-subtitle2 text-left">
-                      Title
-                    </div>
 
-                    <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
+                    <q-card-actions vertical class="justify-around">
+                      <q-btn
+                      flat
+                      round
+                      color="red"
+                      icon="favorite"
+                      />
+                      <q-btn
+                      @click="btnNotify()"
+                      flat
+                      round
+                      color="accent"
+                      icon="play_circle"
+                      />
                     </q-card-actions>
                   </q-card-section>
+
+                  <q-separator />
+
+                  <div class="text-h6 q-mt-sm q-mb-xs text-center truncate">Test</div>
                 </q-card>
 
-                <q-card class="movies" flat bordered>
-                  <q-card-section horizontal>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="absolute-bottom text-subtitle2 text-left">
-                      Title
-                    </div>
-
-                    <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
-
-                <q-card class="movies" flat bordered>
-                  <q-card-section horizontal>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="absolute-bottom text-subtitle2 text-left">
-                      Title
-                    </div>
-
-                    <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
-
-                <q-card class="movies" flat bordered>
-                  <q-card-section horizontal>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="absolute-bottom text-subtitle2 text-left">
-                      Title
-                    </div>
-
-                    <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
-
-                <q-card class="movies" flat bordered>
-                  <q-card-section horizontal>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="absolute-bottom text-subtitle2 text-left">
-                      Title
-                    </div>
-
-                    <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
-
-                <q-card class="movies" flat bordered>
-                  <q-card-section horizontal>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="absolute-bottom text-subtitle2 text-left">
-                      Title
-                    </div>
-
-                    <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
-
-                <q-card class="movies" flat bordered>
-                  <q-card-section horizontal>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="absolute-bottom text-subtitle2 text-left">
-                      Title
-                    </div>
-
-                    <q-card-actions vertical class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
+              </div>
+              <div class="q-pa-lg flex flex-center">
+                <q-pagination
+                color="grey"
+                active-color="accent"
+                direction-links
+                v-model="currentMovie"
+                :max="1"
+                />
 
               </div>
             </q-tab-panel>
@@ -174,160 +124,107 @@
 
               <div class="container">
 
-                <q-card class="songs" flat bordered>
-                  <q-card-section vertical>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="text-subtitle2 absolute-top text-center">
-                      Placeholder
-                    </div>
+                <q-card class="songs" bordered>
+                  <div class="text-h6 q-mt-sm q-mb-xs text-center truncate">Test</div>
 
-                    <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
+                  <q-separator />
+
+                  <q-card-section>
+                    <q-img
+                      style="max-height: 220px"
+                    />
+
+                    <q-card-actions class="justify-around" style="max-height: auto;">
+                      <q-btn
+                      flat
+                      round
+                      color="red"
+                      icon="favorite"
+                      />
+                      <q-btn
+                      flat
+                      round
+                      color="accent"
+                      icon="play_circle"
+                      />
                     </q-card-actions>
                   </q-card-section>
+
+                  <q-separator />
                 </q-card>
 
-                <q-card class="songs" flat bordered>
-                  <q-card-section vertical>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="text-subtitle2 absolute-top text-center">
-                      Placeholder
-                    </div>
+                <q-card class="songs" bordered>
+                  <div class="text-h6 q-mt-sm q-mb-xs text-center truncate">Test</div>
 
-                    <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
+                  <q-separator />
+
+                  <q-card-section>
+                    <q-img
+                      style="max-height: 220px"
+
+                    />
+
+                    <q-card-actions class="justify-around" style="max-height: auto;">
+                      <q-btn
+                      flat
+                      round
+                      color="red"
+                      icon="favorite"
+                      />
+                      <q-btn
+                      flat
+                      round
+                      color="accent"
+                      icon="play_circle"
+                      />
                     </q-card-actions>
                   </q-card-section>
+
+                  <q-separator />
                 </q-card>
 
-                <q-card class="songs" flat bordered>
-                  <q-card-section vertical>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="text-subtitle2 absolute-top text-center">
-                      Placeholder
-                    </div>
+                <q-card class="songs" bordered >
+                  <div class="text-h6 q-mt-sm q-mb-xs text-center truncate">Test</div>
 
-                    <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
+                  <q-separator />
+
+                  <q-card-section>
+                    <q-img
+                      style="max-height: 220px"
+                    />
+
+                    <q-card-actions class="justify-around" style="max-height: auto;">
+                      <q-btn
+                      flat
+                      round
+                      color="red"
+                      icon="favorite"
+                      />
+                      <q-btn
+                      flat
+                      round
+                      color="accent"
+                      icon="play_circle"
+                      />
                     </q-card-actions>
                   </q-card-section>
+
+                  <q-separator />
                 </q-card>
 
-                <q-card class="songs" flat bordered>
-                  <q-card-section vertical>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="text-subtitle2 absolute-top text-center">
-                      Placeholder
-                    </div>
-
-                    <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
-
-                <q-card class="songs" flat bordered>
-                  <q-card-section vertical>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="text-subtitle2 absolute-top text-center">
-                      Placeholder
-                    </div>
-
-                    <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
-
-                <q-card class="songs" flat bordered>
-                  <q-card-section vertical>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="text-subtitle2 absolute-top text-center">
-                      Placeholder
-                    </div>
-
-                    <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
-
-                <q-card class="songs" flat bordered>
-                  <q-card-section vertical>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="text-subtitle2 absolute-top text-center">
-                      Placeholder
-                    </div>
-
-                    <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
-
-                <q-card class="songs" flat bordered>
-                  <q-card-section vertical>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="text-subtitle2 absolute-top text-center">
-                      Placeholder
-                    </div>
-
-                    <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
-
-                <q-card class="songs" flat bordered>
-                  <q-card-section vertical>
-                    <q-img
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
-                    />
-                    <div class="text-subtitle2 absolute-top text-center">
-                      Placeholder
-                    </div>
-
-                    <q-card-actions horizontal class="justify-around q-px-md">
-                      <q-btn flat round color="red" icon="favorite" />
-                      <q-btn flat round color="accent" icon="play_circle" />
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
+              </div>
+              <div class="q-pa-lg flex flex-center">
+                <q-pagination
+                color="grey"
+                active-color="accent"
+                direction-links
+                v-model="currentSong"
+                :max="1"
+                />
 
               </div>
             </q-tab-panel>
           </q-tab-panels>
-          <div class="q-pa-lg flex flex-center">
-            <q-pagination
-              color="accent"
-              v-model="current"
-              :max="5"
-            />
-          </div>
         </q-card>
       </div>
     </div>
@@ -343,7 +240,8 @@ export default defineComponent({
   setup () {
     return {
       tab: ref('movies'),
-      current: ref(1)
+      currentMovie: ref(1),
+      currentSong: ref(1)
     }
   }
 })
@@ -355,11 +253,16 @@ export default defineComponent({
   display: flex
   flex-wrap: wrap
   justify-content: center
-  padding: 40px calc((100% - (255px * 3)) / 2)
+  padding: 40px
 .movies
-  flex: 0 0 215px
+  flex: 0 0 33.333333%
   margin: 1em 20px
+  max-height: 300px
+  width: 400px
+  max-width: 400px
 .songs
-  flex: 0 0 215px
+  flex: 0 0 33.333333%
   margin: 1em 20px
+  width: 400px
+  max-width: 400px
 </style>

@@ -23,24 +23,27 @@
               <div class="text-h6 text-center">Movies</div>
 
               <div class="container">
-                <q-card class="movies" bordered v-for="movie in movies.slice((currentPage-1)*perPage,(currentPage-1)*perPage+perPage)" :key="movie.id">
+                <q-card class="movies" bordered v-for="movie in movies.slice((currentMovie-1)*perPage,(currentMovie-1)*perPage+perPage)" :key="movie.id">
                   <q-card-section horizontal>
                     <q-img
                       style="max-height: 220px"
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
+                      :src="movie.image"
                     />
 
                     <q-card-actions vertical class="justify-around">
                       <q-btn
                       flat
                       round
-                      color="accent"
+                      @click="clicked = !clicked"
+                      :class="[ { 'clicked': clicked} ]"
                       icon="favorite"
                       />
                       <q-btn
+                      refs="test"
+                      @click="showNotif()"
+                      placeholder="movie.name"
                       flat
                       round
-                      color="accent"
                       icon="play_circle"
                       />
                     </q-card-actions>
@@ -54,8 +57,10 @@
 
               <div class="q-pa-lg flex flex-center">
                 <q-pagination
-                  color="accent"
-                  v-model="currentPage"
+                  color="grey"
+                  active-color="accent"
+                  direction-links
+                  v-model="currentMovie"
                   :per-page="perPage"
                   :max="17"
                 />
@@ -67,7 +72,7 @@
 
               <div class="container">
 
-                <q-card class="songs" bordered v-for="song in songs.slice((currentPage-1)*perPage,(currentPage-1)*perPage+perPage)" :key="song.id">
+                <q-card class="songs" bordered v-for="song in songs.slice((currentSong-1)*perPage,(currentSong-1)*perPage+perPage)" :key="song.id">
                   <div class="text-h6 q-mt-sm q-mb-xs text-center truncate">{{song.name}}</div>
 
                   <q-separator />
@@ -75,20 +80,18 @@
                   <q-card-section>
                     <q-img
                       style="max-height: 220px"
-                      src="http://dummyimage.com/100x100.png/dddddd/000000"
+                      :src="song.image"
                     />
 
                     <q-card-actions class="justify-around" style="max-height: auto;">
                       <q-btn
                       flat
                       round
-                      color="accent"
                       icon="favorite"
                       />
                       <q-btn
                       flat
                       round
-                      color="accent"
                       icon="play_circle"
                       />
                     </q-card-actions>
@@ -101,8 +104,10 @@
 
               <div class="q-pa-lg flex flex-center">
                 <q-pagination
-                color="accent"
-                v-model="currentPage"
+                color="grey"
+                active-color="accent"
+                direction-links
+                v-model="currentSong"
                 :per-page="perPage"
                 :max="17"
                 />
@@ -118,19 +123,37 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
+import { useQuasar } from 'quasar'
 import moviesData from 'assets/json/movies.json'
 import songsData from 'assets/json/songs.json'
 
 export default defineComponent({
-  name: 'TestPage',
+  name: 'MainPage',
 
-  setup () {
+  data () {
+    const $q = useQuasar()
+
     return {
       tab: ref('movies'),
-      currentPage: ref(1),
+      currentMovie: ref(1),
+      currentSong: ref(1),
       perPage: 6,
       movies: moviesData,
-      songs: songsData
+      songs: songsData,
+      clicked: false,
+
+      showNotif () {
+        $q.notify({
+          timeout: 20000,
+          message: 'Playing: ' + this.$refs.test,
+          color: 'secondary',
+          textColor: 'accent',
+          badgeStyle: 'opacity: 0',
+          actions: [
+            { icon: 'stop_circle', color: 'blue', backgroundColor: 'primary', handler: () => { /* ... */ } }
+          ]
+        })
+      }
     }
   }
 })
@@ -162,4 +185,7 @@ export default defineComponent({
   overflow: hidden
   text-overflow: ellipsis
   white-space: nowrap
+
+.clicked
+  color: red
 </style>

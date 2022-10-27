@@ -75,6 +75,14 @@ export default {
           console.log(error)
         })
     }
+  },
+  computed: {
+
+    isDisabled () {
+      const result = this.formData.password.length < 6 || this.formData.password.length > 6
+      return result
+    }
+
   }
 }
 </script>

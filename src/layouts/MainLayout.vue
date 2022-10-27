@@ -12,7 +12,7 @@
           dense
           round
           label="Logout"
-          @click="$router.replace('/')"
+          @click="logout"
         />
 
       </q-toolbar>
@@ -25,6 +25,11 @@
     :breakpoint="500"
   >
     <q-scroll-area class="fit">
+
+      <div style=" padding: 10px 10px 10px 10px ; max-width: 200px">
+        <q-select square outlined v-model="select" :options="languages" bg-color="secondary" filled color="accent" placeholder="Languages" />
+      </div>
+
       <q-list padding class="menu-list">
         <q-item
         to="/home"
@@ -79,23 +84,9 @@
     <q-footer >
       <q-toolbar class="flex flex-center bg-accent">
 
-          <q-btn-dropdown color="secondary" text-color="accent" label="Languages">
-            <q-list>
-
-              <q-item clickable v-close-popup @click="onItemClick">
-                <q-item-section>
-                  <q-item-label>English</q-item-label>
-                </q-item-section>
-              </q-item>
-
-              <q-item clickable v-close-popup @click="onItemClick">
-                <q-item-section>
-                  <q-item-label>Русский</q-item-label>
-                </q-item-section>
-              </q-item>
-
-            </q-list>
-          </q-btn-dropdown>
+        <div style=" padding: 10px 10px 10px 10px ; max-width: 200px">
+          <q-select square outlined v-model="select" :options="languages" bg-color="secondary" filled color="accent" placeholder="Languages" />
+        </div>
 
       </q-toolbar>
     </q-footer>
@@ -104,6 +95,9 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/auth'
+import 'firebase/compat/firestore'
 
 export default defineComponent({
   name: 'MainLayout',
@@ -113,7 +107,21 @@ export default defineComponent({
 
   setup () {
     return {
-      drawer: ref(false)
+      drawer: ref(false),
+      select: ref('English'),
+      languages: [
+        'English', 'Русский'
+      ]
+    }
+  },
+  methods: {
+    logout () {
+      firebase.auth().signOut()
+      this.$router.push('/')
+        .then(() => {
+          this.$q.notify({ message: 'Sign Out Success.' })
+        })
+        .catch(error => console.log('error', error))
     }
   }
 })
